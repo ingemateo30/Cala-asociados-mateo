@@ -7,7 +7,7 @@ export const paths = {
       nosotros: `/nosotros`,
       servicios: '/servicios',
       noticias: '/noticias',
-      empleados: '/empleados',
+      nuestroEquipo: '/nuestroequipo',
       contacto: '/contacto',
     },
   };

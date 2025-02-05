@@ -6,7 +6,7 @@ const EmpleadosView = () => {
         { 
                 id: 1, 
                 image: '/empleados/e1.jpg', 
-                name: 'Juan Pérez', 
+                name: 'Jimmy Archila Silva', 
                 position: 'Gerente General', 
                 functions: [
                         'Supervisar todas las operaciones de la empresa.',

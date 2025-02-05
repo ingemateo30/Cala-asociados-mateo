@@ -4,6 +4,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
+
 export const Carousel = () => {
     const ref = useRef(null);
 
@@ -79,34 +80,40 @@ const Card = ({ image, title }) => (
         </div>
     </motion.div>
 );
-
 export const StatsSection = () => {
     const [years, setYears] = useState(0);
     const [clients, setClients] = useState(0);
     const [teams, setTeams] = useState(0);
+    const [startAnimation, setStartAnimation] = useState(false);
 
     useEffect(() => {
+        if (!startAnimation) return;
+
         const intervalYears = setInterval(() => {
             setYears((prev) => (prev < 35 ? prev + 1 : 35));
-        }, 200);
+        }, 150);
 
         const intervalClients = setInterval(() => {
-            setClients((prev) => (prev < 100 ? prev + 50 : 500));
-        }, 600);
+            setClients((prev) => (prev < 100 ? prev + 1 : 100));
+        }, 50);
 
         const intervalTeams = setInterval(() => {
             setTeams((prev) => (prev < 5 ? prev + 1 : 5));
-        }, 200);
+        }, 500);
 
         return () => {
             clearInterval(intervalYears);
             clearInterval(intervalClients);
             clearInterval(intervalTeams);
         };
-    }, []);
+    }, [startAnimation]);
 
     return (
-        <div className="bg-white py-12 text-center">
+        <div 
+            className="bg-white py-12 text-center"
+            onMouseEnter={() => setStartAnimation(true)}
+        >
+            <br />
             <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
                 <div>
                     <p className="text-green-600 text-5xl font-bold">{years}</p>

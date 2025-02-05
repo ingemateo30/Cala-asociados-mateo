@@ -39,16 +39,16 @@ export const Tarjetas = () => {
 
   return (
     <div ref={ref} className="bg-gradient-to-b from-gray-900 to-gray-800">
-      <div className="flex-wrap items-center justify-center gap-8 text-center sm:flex">
+      {/* Usamos Grid para asegurar alineación */}
+      <br />
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 text-center px-4">
         {servicios.map((servicio, index) => (
           <motion.div
             key={index}
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: index * 0.1 }}
-            className={`relative w-full px-4 py-4 mt-2 bg-white rounded-lg shadow-lg sm:w-1/2 md:w-1/2 lg:w-1/4 h-[280px] ring-2 ring-green-200 hover:ring-green-600 ring-offset-2 ring-offset-gray-900 ${
-              hoveredStates[index] ? "hover:shadow-calagreen" : ""
-            } ${index === 1 || index === 4 ? 'mt-16 md:mt-20 lg:mt-12' : ''}`}
+            className="relative bg-white rounded-lg shadow-lg ring-2 ring-green-200 hover:ring-green-600 ring-offset-2 ring-offset-gray-900 h-[280px] p-6 flex flex-col justify-between"
             onMouseEnter={() => handleMouseEnter(index)}
             onMouseLeave={() => handleMouseLeave(index)}
           >
@@ -57,14 +57,14 @@ export const Tarjetas = () => {
                 <Icon icon={servicio.icon} className="text-green-600 text-3xl" />
               </div>
             </div>
-            <h3 className="py-3 text-2xl font-semibold text-gray-700 sm:text-xl dark:text-gray-700">
+            <h3 className="py-3 text-2xl font-semibold text-gray-700 sm:text-xl">
               {servicio.title}
             </h3>
-            <p className="py-2 text-gray-500 text-md dark:text-gray-500">
+            <p className="text-gray-500 text-md">
               {servicio.description}
             </p>
             <button
-              className="absolute inset-0 text-green-100 bg-calagreen text-2xl font-bold px-4 py-2 rounded-md opacity-0 transition ease-in-out delay-150 hover:opacity-90"
+              className="absolute inset-0 text-green-100 bg-calagreen text-2xl font-bold px-4 py-2 rounded-md opacity-0 transition-opacity hover:opacity-90"
               onClick={() => {
                 window.location.href = "/servicios";
               }}
@@ -75,21 +75,22 @@ export const Tarjetas = () => {
           </motion.div>
         ))}
       </div>
-
-      <div className="flex justify-end">
+  
+      {/* Botón para ver más servicios */}
+      <div className="flex justify-end mt mr-12">
         <button
-          className="rounded-full border-2 border-yellow-500 bg-transparent text-white text-lg px-4 py-2 flex items-center transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300 mt-4 mb-4 mr-16"
+          className="rounded-full border-2 border-yellow-500 bg-transparent text-white text-lg px-4 py-2 flex items-center transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300"
           onClick={() => {
             window.location.href = "/servicios";
           }}
         >
           Ir a todos los servicios
-          <Icon
-            icon="fe:arrow-right"
-            style={{ color: "white", marginLeft: "6px" }}
-          />
+          <Icon icon="fe:arrow-right" className="ml-2 text-white" />
         </button>
+        
       </div>
+      <br />
     </div>
   );
+  
 };
