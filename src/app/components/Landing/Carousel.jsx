@@ -88,15 +88,15 @@ export const StatsSection = () => {
     useEffect(() => {
         const intervalYears = setInterval(() => {
             setYears((prev) => (prev < 35 ? prev + 1 : 35));
-        }, 100);
+        }, 200);
 
         const intervalClients = setInterval(() => {
-            setClients((prev) => (prev < 500 ? prev + 50 : 500));
-        }, 50);
+            setClients((prev) => (prev < 100 ? prev + 50 : 500));
+        }, 600);
 
         const intervalTeams = setInterval(() => {
-            setTeams((prev) => (prev < 15 ? prev + 1 : 15));
-        }, 100);
+            setTeams((prev) => (prev < 5 ? prev + 1 : 5));
+        }, 200);
 
         return () => {
             clearInterval(intervalYears);

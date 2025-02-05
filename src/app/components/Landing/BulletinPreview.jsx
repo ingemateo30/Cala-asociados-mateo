@@ -35,7 +35,6 @@ const BulletinPreview = () => {
               <button className="bg-calagreen border border-calagreen text-white text-xl font-bold lg:w-72 lg:ml-12 py-3 px-6 rounded-full mb-4 lg:mb-0 lg:mr-6 transition-colors duration-300 ease-in-out hover:bg-transparent hover:text-calagreen"
               onClick={downloadFile}
               >
-                
                 Descargar
               </button>
             </div>
