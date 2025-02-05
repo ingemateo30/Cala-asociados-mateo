@@ -109,25 +109,25 @@ export const StatsSection = () => {
     }, [startAnimation]);
 
     return (
-        <div 
+        <motion.div 
             className="bg-white py-12 text-center"
-            onMouseEnter={() => setStartAnimation(true)}
+            onViewportEnter={() => setStartAnimation(true)}
         >
             <br />
             <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
                 <div>
-                    <p className="text-green-600 text-5xl font-bold">{years}</p>
+                    <p className="text-green-600 text-3xl md:text-5xl font-bold">{years}</p>
                     <p className="font-bold">Años de experiencia</p>
                 </div>
                 <div>
-                    <p className="text-green-600 text-5xl font-bold">+{clients}</p>
+                    <p className="text-green-600 text-3xl md:text-5xl font-bold">+{clients}</p>
                     <p className="font-bold">Clientes satisfechos</p>
                 </div>
                 <div>
-                    <p className="text-green-600 text-5xl font-bold">+{teams}</p>
+                    <p className="text-green-600 text-3xl md:text-5xl font-bold">+{teams}</p>
                     <p className="font-bold">Contadores expertos</p>
                 </div>
             </div>
-        </div>
+        </motion.div>
     );
 };

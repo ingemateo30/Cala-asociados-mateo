@@ -39,20 +39,30 @@ const BulletinPreview = () => {
               </button>
             </div>
             <div className="flex items-center justify-center sm:justify-end">
-              <motion.div className="relative w-full h-72 overflow-hidden rounded-lg shadow-xl" variants={scrollAnimation}>
-                <div className={`relative w-full h-full bg-blue-500 duration-300 overflow-hidden ${isHovered ? "opacity-40 bg-calagreen transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500" : ""}`}
-                  onMouseEnter={() => setIsHovered(true)}
-                  onMouseLeave={() => setIsHovered(false)}
-                  onClick={downloadFile}
-                >
-                  <Image src="/boletin05.png" alt="Boletin Cala Asociados" quality={100} layout="fill" objectFit="cover" />
-                  {isHovered && (
-                    <div className="absolute inset-0 flex items-center justify-center ">
-                      <Icon icon="mingcute:download-line" width="72" height="72"  style={{color: '#EAB308'}} />
-                    </div>
-                  )}
-                </div>
-              </motion.div>
+            <motion.div className="relative w-full h-72 sm:h-48 overflow-hidden rounded-lg shadow-xl" variants={scrollAnimation}>
+  <div 
+    className={`relative w-full h-full bg-green-700 duration-200 overflow-hidden ${isHovered ? "opacity-40 bg-calagreen transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-105 hover:bg-indigo-500" : ""}`}
+    onMouseEnter={() => setIsHovered(true)}
+    onMouseLeave={() => setIsHovered(false)}
+    onClick={downloadFile}
+  >
+    <Image 
+      src="/boletin05.png" 
+      alt="Boletin Cala Asociados" 
+      quality={100} 
+      layout="intrinsic" 
+      width={500} 
+      height={375} 
+      className="w-full h-full object-cover sm:max-h-48"
+    />
+    {isHovered && (
+      <div className="absolute inset-0 flex items-center justify-center">
+        <Icon icon="mingcute:download-line" width="72" height="72" style={{ color: '#EAB308' }} />
+      </div>
+    )}
+  </div>
+</motion.div>
+
             </div>
           </motion.div>
         </ScrollAnimationWrapper>
