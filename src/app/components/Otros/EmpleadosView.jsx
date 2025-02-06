@@ -61,7 +61,7 @@ const EmpleadosView = () => {
             {viewGroupPhoto ? (
                 <div className="relative w-full max-w-4xl mx-auto">
                    <img
-    src="./empleados/imagen1.jpg"
+    src="/empleados/imagen1.JPG"
     alt="nuestro equipo"
     className="w-full rounded-lg shadow-lg"
 />
