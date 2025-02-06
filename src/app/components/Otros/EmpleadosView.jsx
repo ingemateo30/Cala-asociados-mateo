@@ -60,14 +60,11 @@ const EmpleadosView = () => {
 
             {viewGroupPhoto ? (
                 <div className="relative w-full max-w-4xl mx-auto">
-                    <motion.img
-                        src={`${process.env.PUBLIC_URL}/empleados/imagen1.jpg`}
-                        alt="nuestro equipo"
-                        className="w-full rounded-lg shadow-lg"
-                        initial={{ opacity: 0, scale: 0.9 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        transition={{ duration: 0.5 }}
-                    />
+                   <img
+    src="/empleados/imagen1.jpg"
+    alt="nuestro equipo"
+    className="w-full rounded-lg shadow-lg"
+/>
                 </div>
             ) : (
                 <div className="grid grid-cols-1 gap-y-8 md:gap-y-16">
