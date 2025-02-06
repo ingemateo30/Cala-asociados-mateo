@@ -39,7 +39,6 @@ export const Tarjetas = () => {
 
   return (
     <div ref={ref} className="bg-gradient-to-b from-gray-900 to-gray-800">
-      {/* Usamos Grid para asegurar alineación */}
       <br />
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 text-center px-4">
         {servicios.map((servicio, index) => (
@@ -60,9 +59,9 @@ export const Tarjetas = () => {
             <h3 className="py-3 text-2xl font-semibold text-gray-700 sm:text-xl">
               {servicio.title}
             </h3>
-            <p className="text-gray-500 text-md">
-              {servicio.description}
-            </p>
+            <p className="text-gray-500 text-md break-words overflow-hidden line-clamp-3">
+  {servicio.description}
+</p>
             <button
               className="absolute inset-0 text-green-100 bg-calagreen text-2xl font-bold px-4 py-2 rounded-md opacity-0 transition-opacity hover:opacity-90"
               onClick={() => {
@@ -75,22 +74,19 @@ export const Tarjetas = () => {
           </motion.div>
         ))}
       </div>
-  
+
       {/* Botón para ver más servicios */}
-      <div className="flex justify-end mt mr-12">
-        <button
-          className="rounded-full border-2 border-yellow-500 bg-transparent text-white text-lg px-4 py-2 flex items-center transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300"
-          onClick={() => {
-            window.location.href = "/servicios";
-          }}
-        >
-          Ir a todos los servicios
-          <Icon icon="fe:arrow-right" className="ml-2 text-white" />
-        </button>
-        
-      </div>
+      <div className="flex justify-center sm:justify-end mt-4 sm:mr-12">
+  <button
+    className="rounded-full border-2 border-yellow-500 bg-transparent text-white text-lg px-4 py-2 flex items-center transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300"
+    onClick={() => window.location.href = "/servicios"}
+  >
+    Ir a todos los servicios
+    <Icon icon="fe:arrow-right" className="ml-2 text-white" />
+  </button>
+</div>
       <br />
     </div>
   );
-  
+
 };
