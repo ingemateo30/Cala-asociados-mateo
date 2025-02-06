@@ -56,12 +56,14 @@ export const Carousel = () => {
         <div ref={ref} className="bg-white py-1">
             <h2 className="text-gray-600 text-5xl font-semibold mb-6 mt-12 text-center">Algunos de nuestros clientes</h2>
             <Slider className="mb-6 mx-4" {...settings}>
-                <Card image="./images/logo_salud-mia.png" alt="Logo Salud Mía"/>
                 <Card image="./images/NOGAL.png" alt="Logo El Nogal Depósito de Materiales" />
                 <Card image="./images/descarga.png" alt="Logo Concretos el Nogal"/>
                 <Card image="./images/FIGUHIERROS-LOGO1-325w.webp" alt="Logo FIGUHIERROS FT S.A.S"/>
                 <Card image="./images/logo-caficultor.jpeg" alt="Logo Coperativa de caficultores"/>
                 <Card image="./images/LOGO JELCOM.jpg" alt="Logo Coperativa de caficultores"/>
+                <Card image="./images/abogados.png" alt="Logo Miguel Angel Marquez Serrano "/>
+                <Card image="./images/pinturas.png" alt="Logo superior de pinturas"/>
+                <Card image="./images/unisangil.png" alt="fundacion universitaria unisangil"/>
             </Slider>
         </div>
     );
