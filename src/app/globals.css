@@ -35,7 +35,7 @@ body {
     background-size: cover !important;
     background-position: center !important;
     background-repeat: no-repeat !important;
-    background-attachment: scroll !important; /* iOS tiene problemas con 'fixed' */
+    background-attachment: fixed !important; /* iOS tiene problemas con 'fixed' */
     min-height: 100vh !important;
   }
 }
