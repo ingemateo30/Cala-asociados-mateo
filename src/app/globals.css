@@ -71,7 +71,7 @@ body.background-image {
 
 @media (min-width: 769px) {
   .background-image {
-    background-image: url('/San_Gil_Santander1_large.png');
+    background-image: url('/San_Gil_Santander1.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
