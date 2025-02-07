@@ -28,8 +28,7 @@ body {
 /* Estilos para pantallas pequeñas */
 @media (max-width: 768px) {
   body {
-    background: url('https://www.calaasociados.com/San_Gil_Santander.jpg') no-repeat center center fixed !important;
-    background-size: cover !important;
-    background-attachment: fixed !important; /* Cambia de fixed a scroll por pruebas */
+    background: url('https://github.com/Irvin-Silva/CALA_ASOCIADOS/blob/main/public/San_Gil_Santander.jpg') no-repeat center center fixed !important;
+    background-size: cover !important;/
   }
 }
