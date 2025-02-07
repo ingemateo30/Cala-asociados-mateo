@@ -29,7 +29,7 @@ body {
 @media (max-width: 768px) {
   body {
     background: url('https://www.calaasociados.com/San_Gil_Santander.jpg') no-repeat center center fixed;
-    background-size: cover;
+    background-size: cover !important;
     -webkit-background-size: cover; /* Para Safari */
     -moz-background-size: cover;
     -o-background-size: cover;
