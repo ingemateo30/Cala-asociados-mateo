@@ -2,12 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Variables de color */
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 230, 255, 255;
   --background-end-rgb: 255, 255, 255;
 }
 
+/* Modo oscuro */
 @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;
@@ -16,74 +18,24 @@
   }
 }
 
-.background-image {
+/* Estilo base para el body */
+body {
+  color: rgb(var(--foreground-rgb));
+  background-image: url('/SanGil.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center;
 }
 
-/* Estilos para computadoras */
-body.background-image {
-  background-image: url('/SanGil.jpg');
-  color: rgb(var(--foreground-rgb));
-}
-
-/* Estilos para pantallas pequeñas */
-@media (max-width: 480px) {
-  .background-image {
-    background-image: url('/San_Gil_Santander1.png');
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
-    min-height: 100vh;
-    -webkit-background-size: contain;
-    -webkit-background-position: center;
-    -webkit-background-repeat: no-repeat;
-  }
-}
-
-@media (min-width: 481px) and (max-width: 768px) {
-  .background-image {
-    background-image: url('/San_Gil_Santander1.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    min-height: 100vh;
-    -webkit-background-size: cover;
-    -webkit-background-position: center;
-    -webkit-background-repeat: no-repeat;
-  }
-}
+/* Estilos para dispositivos móviles */
 @media (max-width: 768px) {
-  .background-image {
-    background-image: url('/San_Gil_Santander1.png');
-    background-size: cover; /* o prueba con contain o 100vw 100vh */
-    background-position: 50% 50%; /* Ajusta la imagen al centro */
-    background-repeat: no-repeat;
-    min-height: 100vh; /* Asegura que el contenedor tenga altura */
-    -webkit-background-size: cover; /* o prueba con contain o 100vw 100vh */
-    -webkit-background-position: 50% 50%;
-    -webkit-background-repeat: no-repeat;
+  body {
+    background-image: url('/San_Gil_Santander1.png') !important;
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    background-attachment: scroll !important; /* iOS tiene problemas con 'fixed' */
+    min-height: 100vh !important;
   }
-}
-
-
-@media (min-width: 769px) {
-  .background-image {
-    background-image: url('/San_Gil_Santander1.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    min-height: 100vh;
-    -webkit-background-size: cover;
-    -webkit-background-position: center;
-    -webkit-background-repeat: no-repeat;
-  }
-}
-
-
-
-.content {
-  /* Aquí puedes agregar estilos adicionales para el contenedor de contenido */
 }
