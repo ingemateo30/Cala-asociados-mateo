@@ -29,12 +29,13 @@ body {
 @media (max-width: 768px) {
   body {
     color: rgb(var(--foreground-rgb));
-    background-image: url('/SanGil2.png'); /* Cambia 'otra-imagen-de-fondo.jpg' por la ruta de tu otra imagen */
-    background-size: cover;
+    background-image: url('/SanGil2.png');
+    background-size: contain; /* O prueba con '100% auto' */
     background-repeat: no-repeat;
-    background-attachment: fixed;
     background-position: center;
-    -webkit-overflow-scrolling: touch; /* Mejora en iOS */
-    transform: translateZ(0); 
+    min-height: 100vh;
+    -webkit-overflow-scrolling: touch;
+    transform: translateZ(0);
+    image-rendering: -webkit-optimize-contrast; /* Mejora la nitidez en iOS */
   }
 }
