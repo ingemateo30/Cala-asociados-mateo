@@ -28,7 +28,7 @@ body {
 /* Estilos para pantallas pequeñas */
 @media (max-width: 768px) {
   body {
-    background-image: url('/San_Gil_Santander.jpg');
+    background-image: url('/San_Gil_Santander1.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
