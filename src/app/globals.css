@@ -28,6 +28,10 @@ body {
 /* Estilos para pantallas pequeñas */
 @media (max-width: 768px) {
   body {
-    background-image: url('/San_Gil_Santander.jpg'); /* Cambia 'otra-imagen-de-fondo.jpg' por la ruta de tu otra imagen */
+    background-image: url('/San_Gil_Santander.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh; /* Asegura que el body tenga altura */
   }
 }
