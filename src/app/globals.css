@@ -28,7 +28,7 @@ body {
 /* Estilos para pantallas pequeñas */
 @media (max-width: 768px) {
   body {
-    background: url('https://www.calaasociados.com/San_Gil_Santander.jpg') no-repeat center center scroll;
+    background: url('https://www.calaasociados.com/SanGil.jpg') no-repeat center center scroll;
     background-size: cover !important;
     -webkit-background-size: cover; /* Para Safari */
     -moz-background-size: cover;
