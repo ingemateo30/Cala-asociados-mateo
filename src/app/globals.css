@@ -22,40 +22,42 @@ html, body {
   padding: 0;
 }
 
+/* Fondo para computadoras */
 body {
   color: rgb(var(--foreground-rgb));
-  background-image: url('/SanGil.jpg');
+  background-image: url('/SanGil.jpg'); /* Imagen para escritorio */
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center;
   min-height: 100vh;
 }
+
+/* Fondo para móviles (oculto por defecto) */
 body::before {
   content: '';
-  background-image: url('/SanGil2.png');
+  background-image: url('/SanGil2.png'); /* Imagen para móviles */
   background-size: cover;
   background-position: center;
-  position: fixed;
+  background-repeat: no-repeat;
+  position: fixed; 
   top: 0;
   left: 0;
   width: 100%;
   height: 100vh;
   z-index: -1;
-  opacity: 0.5; /* Para ver si hay algo encima */
+  opacity: 0; /* Oculta por defecto */
+  pointer-events: none;
 }
 
 /* Estilos para pantallas pequeñas */
 @media (max-width: 768px) {
   body {
-    background-image: url('/SanGil21.png');
-    background-repeat: no-repeat;
-    background-position: top center;
-    min-height: 100vh;
-    -webkit-overflow-scrolling: touch; 
-    -webkit-transform: translate3d(0, 0, 0);
-    -webkit-backface-visibility: hidden;
-    -webkit-perspective: 1000;
-    background-size: cover;
+    background: none; /* Elimina el fondo del body en móviles */
+    position: relative; /* Necesario para el pseudo-elemento */
+  }
+
+  body::before {
+    opacity: 1; /* Muestra la imagen en dispositivos móviles */
   }
 }
