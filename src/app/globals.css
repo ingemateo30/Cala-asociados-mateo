@@ -31,11 +31,11 @@ body {
 /* Estilos para dispositivos móviles */
 @media (max-width: 768px) {
   body {
+    color: rgb(var(--foreground-rgb));
     background-image: url('/San_Gil_Santander1.png') !important;
     background-size: cover !important;
     background-position: center !important;
     background-repeat: no-repeat !important;
-    background-attachment: fixed !important; /* iOS tiene problemas con 'fixed' */
     min-height: 100vh !important;
   }
 }
