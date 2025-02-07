@@ -30,6 +30,6 @@ body {
   body {
     background: url('https://www.calaasociados.com/San_Gil_Santander.jpg') no-repeat center center fixed !important;
     background-size: cover !important;
-    background-attachment: scroll !important; /* Cambia de fixed a scroll por pruebas */
+    background-attachment: fixed !important; /* Cambia de fixed a scroll por pruebas */
   }
 }
