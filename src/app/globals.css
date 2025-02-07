@@ -57,16 +57,17 @@ body.background-image {
 }
 @media (max-width: 768px) {
   .background-image {
-    background-image: url('/San_Gil_Santander1_small.png');
-    background-size: cover;
-    background-position: center;
+    background-image: url('/San_Gil_Santander1.png');
+    background-size: cover; /* o prueba con contain o 100vw 100vh */
+    background-position: 50% 50%; /* Ajusta la imagen al centro */
     background-repeat: no-repeat;
-    min-height: 100vh;
-    -webkit-background-size: cover;
-    -webkit-background-position: center;
+    min-height: 100vh; /* Asegura que el contenedor tenga altura */
+    -webkit-background-size: cover; /* o prueba con contain o 100vw 100vh */
+    -webkit-background-position: 50% 50%;
     -webkit-background-repeat: no-repeat;
   }
 }
+
 
 @media (min-width: 769px) {
   .background-image {
