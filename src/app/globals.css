@@ -16,6 +16,12 @@
   }
 }
 
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
 body {
   color: rgb(var(--foreground-rgb));
   background-image: url('/SanGil.jpg');
@@ -23,18 +29,21 @@ body {
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center;
+  min-height: 100vh;
 }
 
 /* Estilos para pantallas pequeñas */
 @media (max-width: 768px) {
   body {
-    color: rgb(var(--foreground-rgb));
-    background-image: url('/SanGil2.png'); /* Cambia 'otra-imagen-de-fondo.jpg' por la ruta de tu otra imagen */
+    background-image: url('/SanGil2.png');
     background-size: cover;
     background-repeat: no-repeat;
-    background-attachment: fixed;
     background-position: center;
-    -webkit-overflow-scrolling: touch; /* Mejora en iOS */
-    transform: translateZ(0); 
+    min-height: 100vh;
+
+    -webkit-overflow-scrolling: touch; 
+    -webkit-transform: translate3d(0, 0, 0);
+    -webkit-backface-visibility: hidden;
+    -webkit-perspective: 1000;
   }
 }
