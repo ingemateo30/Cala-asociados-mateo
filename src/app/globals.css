@@ -28,7 +28,6 @@ body {
 /* Estilos para pantallas pequeñas */
 @media (max-width: 768px) {
   body {
-    background: url('https://github.com/Irvin-Silva/CALA_ASOCIADOS/blob/main/public/San_Gil_Santander.jpg') no-repeat center center fixed !important;
-    background-size: cover !important;/
+    background-image: url('/San_Gil_Santander.jpg'); /* Cambia 'otra-imagen-de-fondo.jpg' por la ruta de tu otra imagen */
   }
 }
