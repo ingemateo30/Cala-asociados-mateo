@@ -2,7 +2,7 @@ import React from 'react';
 
 const Empleados = () => {
     const empresasAsociadas = [
-        { id: 1, nombre: 'Lesmez y Valdes SAS', imagen: './images/1.png' },
+        { id: 1, nombre: '', imagen: './images/1.png' },
         { id: 2, nombre: '.', imagen: './images/2.png' },
         { id: 3, nombre: '.', imagen: './images/3.png' },
         { id: 4, nombre: '.', imagen: './images/18.png' },
