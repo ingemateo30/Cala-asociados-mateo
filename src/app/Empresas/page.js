@@ -9,7 +9,7 @@ export default function EmpresasAsociadas() {
     <div className="h-auto w-auto bg-gradient-to-r from-green-50 to-green-100 py-10">
       <Container>
         <h2 className="text-3xl font-bold text-center text-green-800 mb-6 mt-20">
-          Empresas Asociadas
+          Empresas Asociadas.
         </h2>
         <Empleados />
       </Container>
