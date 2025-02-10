@@ -1,7 +1,7 @@
 "use client";
 
 import { Container } from '@mui/material';
-import Empleados from '../components/otros/Empleados';
+import Empleados from '../components/Otros/Empleados';
 import Footer from '../components/Footer';
 
 export default function EmpresasAsociadas() {
