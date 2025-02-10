@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import Link from 'next/link';
 
 
 export const Carousel = () => {
@@ -52,22 +53,47 @@ export const Carousel = () => {
         ],
     };
 
+    const handleViewAllClients = () => {
+        router.push('/Empresas'); // Redirige a la página de clientes (ajusta la ruta si es diferente)
+    };
+
     return (
         <div ref={ref} className="bg-white py-1">
-            <h2 className="text-gray-600 text-5xl font-semibold mb-6 mt-12 text-center">Algunos de nuestros clientes</h2>
+            <h2 className="text-gray-600 text-5xl font-semibold mb-6 mt-12 text-center">
+                Algunos de nuestros clientes
+            </h2>
+
             <Slider className="mb-6 mx-4" {...settings}>
                 <Card image="./images/NOGAL.png" alt="Logo El Nogal Depósito de Materiales" />
-                <Card image="./images/descarga.png" alt="Logo Concretos el Nogal"/>
-                <Card image="./images/FIGUHIERROS-LOGO1-325w.webp" alt="Logo FIGUHIERROS FT S.A.S"/>
-                <Card image="./images/logo-caficultor.jpeg" alt="Logo Coperativa de caficultores"/>
-                <Card image="./images/LOGO JELCOM.jpg" alt="Logo Coperativa de caficultores"/>
-                <Card image="./images/abogados.png" alt="Logo Miguel Angel Marquez Serrano "/>
-                <Card image="./images/pinturas.png" alt="Logo superior de pinturas"/>
-                <Card image="./images/unisangil.png" alt="fundacion universitaria unisangil"/>
+                <Card image="./images/descarga.png" alt="Logo Concretos el Nogal" />
+                <Card image="./images/FIGUHIERROS-LOGO1-325w.webp" alt="Logo FIGUHIERROS FT S.A.S" />
+                <Card image="./images/logo-caficultor.jpeg" alt="Logo Cooperativa de Caficultores" />
+                <Card image="./images/abogados.png" alt="Logo Miguel Ángel Márquez Serrano" />
+                <Card image="./images/pinturas.png" alt="Logo Superior de Pinturas" />
+                <Card image="./images/unisangil.png" alt="Fundación Universitaria Unisangil" />
             </Slider>
+            <motion.div
+  initial={{ opacity: 0, y: 50 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ duration: 1, delay: 1 }}
+  className="flex items-center justify-center w-full" // Centrado horizontal y vertical
+>
+  <Link href="/Empresas">
+    <motion.button
+      whileHover={{ scale: 1.1 }}
+      whileTap={{ scale: 0.9 }}
+      className="bg-calagreen border border-calagreen text-white text-lg lg:text-xl font-bold py-3 px-16 rounded-full transition-colors duration-300 ease-in-out"
+    >
+      Ver más
+    </motion.button>
+  </Link>
+</motion.div>
+
+           
         </div>
     );
 };
+
 
 const Card = ({ image, title }) => (
     <motion.div
@@ -100,7 +126,7 @@ export const StatsSection = () => {
         }, 50);
 
         const intervalTeams = setInterval(() => {
-            setTeams((prev) => (prev < 5 ? prev + 1 : 5));
+            setTeams((prev) => (prev < 10 ? prev + 1 : 10));
         }, 500);
 
         return () => {
@@ -127,7 +153,7 @@ export const StatsSection = () => {
                 </div>
                 <div>
                     <p className="text-green-600 text-3xl md:text-5xl font-bold">+{teams}</p>
-                    <p className="font-bold text-black">Contadores expertos</p>
+                    <p className="font-bold text-black">Profesionales expertos</p>
                 </div>
             </div>
         </motion.div>
