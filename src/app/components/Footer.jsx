@@ -25,8 +25,8 @@ const ContactInfo = () => {
 
 const Footer = () => {
   return (
-    <div className="bg-white text-black">
-      <footer className="max-w-7xl mx-auto px-4 py-12">
+    <div className="bg-gray-200 text-black">
+      <footer className="max-w-7xl mx-auto px-4 py-12" style={{ backgroundColor: '#e5e7eb' }}>
         <ContactInfo />
         <div className="flex justify-center space-x-6 mt-6">
           <Link href="https://www.instagram.com/calaasociados/">
