@@ -47,5 +47,4 @@ const FooterDos = () => {
         </div>
       );
     };
-
 export default FooterDos;

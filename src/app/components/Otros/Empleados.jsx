@@ -16,7 +16,7 @@ const Empleados = () => {
         { id: 12, nombre: '.', imagen: './images/12.png' },
         { id: 13, nombre: '.', imagen: './images/13.png' },
         { id: 14, nombre: '.', imagen: './images/14.png' },
-        //{ id: 15, nombre: '.', imagen: './images/15.png' },
+        { id: 15, nombre: '.', imagen: './images/17.png' },
         { id: 16, nombre: '.', imagen: './images/16.png' },
     ];
 
