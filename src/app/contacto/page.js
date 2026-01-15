@@ -13,7 +13,7 @@ export default function Nosotros() {
   return (
     <>
       <Head>
-        <title>Contacto - Cala Asociados Contadores Públicos en San Gil Y Bucaramanga</title>
+        <title>Contacto - Cala Asociados Contadores Públicos en San Gil</title>
         <meta
           name="description"
           content="Contacta a Cala Asociados Contadores Públicos para obtener asesoramiento contable y financiero de calidad. Estamos aquí para ayudarte con tus necesidades contables y fiscales."

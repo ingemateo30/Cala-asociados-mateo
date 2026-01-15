@@ -11,8 +11,8 @@ const BulletinPreview = () => {
 
   const downloadFile = () => {
     const link = document.createElement("a");
-    link.href = "/files/BOLETIN CALA ASOCIADOS 2025.pdf";
-    link.download = "BOLETIN CALA ASOCIADOS 2025";
+    link.href = "/files/BOLETIN CALA ASOCIADOS 2026.pdf";
+    link.download = "BOLETIN CALA ASOCIADOS 2026";
     link.click();
   };
 
@@ -26,7 +26,7 @@ const BulletinPreview = () => {
           >
             <div className="flex flex-col justify-center">
               <h1 className="text-4xl lg:text-5xl font-medium text-calagreen">
-                <strong>Boletín tributario 2025 </strong>
+                <strong>Boletín tributario 2026 </strong>
               </h1>
               <p className="text-gray-500 text-lg mt-6 mb-6">
                 Aquí puedes obtener nuestro último boletín tributario.
@@ -47,7 +47,7 @@ const BulletinPreview = () => {
     onClick={downloadFile}
   >
     <Image 
-      src="/boletin05.png" 
+      src="/boletin06.png" 
       alt="Boletin Cala Asociados" 
       quality={100} 
       layout="intrinsic" 
