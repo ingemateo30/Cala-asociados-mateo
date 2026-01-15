@@ -12,6 +12,7 @@ import { Carousel, StatsSection} from "./components/Landing/Carousel";
 import Footer from "./components/Footer";
 import WebLink from "./components/Landing/WebLink";
 import MapComponent from "./components/ContactPage/MapComponent";
+import DecretoSection from "./components/Otros/Decretosection";
 
 export default function Home() {
 
@@ -36,7 +37,9 @@ export default function Home() {
         <Hero scrollToBulletinPreview={scrollToBulletinPreview} />
         <Tarjetas />
         <BulletinPreview/>
+        <DecretoSection />
         <Carousel />
+        
         <StatsSection />
         {/* <MapComponent /> */}
         <Contact />
