@@ -13,6 +13,7 @@ import Footer from "./components/Footer";
 import WebLink from "./components/Landing/WebLink";
 import MapComponent from "./components/ContactPage/MapComponent";
 import DecretoSection from "./components/Otros/Decretosection";
+import RetencionesSection from "./components/Landing/RetencionesSection";
 
 export default function Home() {
 
@@ -38,6 +39,7 @@ export default function Home() {
         <Tarjetas />
         <BulletinPreview/>
         <DecretoSection />
+        <RetencionesSection />
         <Carousel />
         
         <StatsSection />
