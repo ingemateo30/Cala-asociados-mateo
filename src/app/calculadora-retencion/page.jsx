@@ -11,14 +11,17 @@ const CalculadoraRetencionCompleta2026 = () => {
 
   // Tipos de retención disponibles
   const tiposRetencion = [
-    { id: 'salarios', label: 'Salarios (Empleados)', icon: 'mdi:briefcase' },
-    { id: 'honorarios', label: 'Honorarios (Profesionales)', icon: 'mdi:account-tie' },
-    { id: 'servicios', label: 'Servicios (Independientes)', icon: 'mdi:tools' },
-    { id: 'arrendamientos', label: 'Arrendamientos', icon: 'mdi:home-city' },
-    { id: 'dividendos', label: 'Dividendos', icon: 'mdi:chart-line' },
+    { id: 'salarios', label: 'Salarios', icon: 'mdi:briefcase' },
+    { id: 'honorarios', label: 'Honorarios', icon: 'mdi:account-tie' },
+    { id: 'servicios', label: 'Servicios Generales', icon: 'mdi:tools' },
     { id: 'compras', label: 'Compras', icon: 'mdi:cart' },
+    { id: 'arrendamientos', label: 'Arrendamientos', icon: 'mdi:home-city' },
     { id: 'comisiones', label: 'Comisiones', icon: 'mdi:percent' },
     { id: 'rendimientos', label: 'Rendimientos Financieros', icon: 'mdi:bank' },
+    { id: 'dividendos', label: 'Dividendos', icon: 'mdi:chart-line' },
+    { id: 'transporte', label: 'Transporte', icon: 'mdi:truck' },
+    { id: 'hoteles', label: 'Hoteles y Restaurantes', icon: 'mdi:food' },
+    { id: 'construccion', label: 'Construcción', icon: 'mdi:office-building' },
   ];
 
   const [tipoSeleccionado, setTipoSeleccionado] = useState('salarios');
@@ -59,18 +62,17 @@ const CalculadoraRetencionCompleta2026 = () => {
         break;
 
       case 'honorarios':
-        baseMinima = 27 * UVT_2026; // 27 UVT = $1,414,098
-        if (valor >= baseMinima) {
-          tasaAplicada = esDeclarante ? 10 : 11;
-          retencion = valor * (tasaAplicada / 100);
-          aplicaRetencion = true;
-          detalles = [
-            { label: 'Tipo', valor: 'Honorarios profesionales' },
-            { label: 'Base mínima', valor: `${(baseMinima).toLocaleString('es-CO', { style: 'currency', currency: 'COP' })} (27 UVT)` },
-            { label: 'Tarifa', valor: `${tasaAplicada}%` },
-            { label: 'Es declarante', valor: esDeclarante ? 'Sí' : 'No' }
-          ];
-        }
+        // Base mínima 0 UVT - aplica desde el primer peso
+        tasaAplicada = esDeclarante ? 10 : 11;
+        retencion = valor * (tasaAplicada / 100);
+        aplicaRetencion = true;
+        detalles = [
+          { label: 'Tipo', valor: 'Honorarios y comisiones profesionales' },
+          { label: 'Base mínima', valor: 'No aplica - retiene desde el primer peso' },
+          { label: 'Tarifa', valor: `${tasaAplicada}%` },
+          { label: 'Es declarante', valor: esDeclarante ? 'Sí' : 'No' },
+          { label: 'Normativa', valor: 'Tabla de retención 2026' }
+        ];
         break;
 
       case 'servicios':
@@ -89,16 +91,18 @@ const CalculadoraRetencionCompleta2026 = () => {
         break;
 
       case 'arrendamientos':
-        // Arrendamiento de bienes inmuebles - NO tiene base mínima
-        tasaAplicada = 3.5;
-        retencion = valor * (tasaAplicada / 100);
-        aplicaRetencion = true;
-        detalles = [
-          { label: 'Tipo', valor: 'Arrendamiento de bienes inmuebles' },
-          { label: 'Base mínima', valor: 'No aplica' },
-          { label: 'Tarifa', valor: `${tasaAplicada}%` },
-          { label: 'Nota', valor: 'Aplica desde el primer peso' }
-        ];
+        // Arrendamiento de bienes inmuebles - Base mínima 10 UVT
+        baseMinima = 10 * UVT_2026; // 10 UVT = $523,740
+        if (valor >= baseMinima) {
+          tasaAplicada = 3.5;
+          retencion = valor * (tasaAplicada / 100);
+          aplicaRetencion = true;
+          detalles = [
+            { label: 'Tipo', valor: 'Arrendamiento de bienes inmuebles' },
+            { label: 'Base mínima', valor: `${baseMinima.toLocaleString('es-CO', { style: 'currency', currency: 'COP' })} (10 UVT)` },
+            { label: 'Tarifa', valor: `${tasaAplicada}%` }
+          ];
+        }
         break;
 
       case 'dividendos':
@@ -112,29 +116,29 @@ const CalculadoraRetencionCompleta2026 = () => {
       case 'compras':
         baseMinima = 10 * UVT_2026; // 10 UVT = $523,740
         if (valor >= baseMinima) {
-          tasaAplicada = 2.5;
+          tasaAplicada = esDeclarante ? 2.5 : 3.5;
           retencion = valor * (tasaAplicada / 100);
           aplicaRetencion = true;
           detalles = [
             { label: 'Tipo', valor: 'Compras generales' },
             { label: 'Base mínima', valor: `${baseMinima.toLocaleString('es-CO', { style: 'currency', currency: 'COP' })} (10 UVT)` },
-            { label: 'Tarifa', valor: `${tasaAplicada}%` }
+            { label: 'Tarifa', valor: `${tasaAplicada}%` },
+            { label: 'Es declarante', valor: esDeclarante ? 'Sí' : 'No' }
           ];
         }
         break;
 
       case 'comisiones':
-        baseMinima = 10 * UVT_2026; // 10 UVT
-        if (valor >= baseMinima) {
-          tasaAplicada = 11;
-          retencion = valor * (tasaAplicada / 100);
-          aplicaRetencion = true;
-          detalles = [
-            { label: 'Tipo', valor: 'Comisiones' },
-            { label: 'Base mínima', valor: `${baseMinima.toLocaleString('es-CO', { style: 'currency', currency: 'COP' })} (10 UVT)` },
-            { label: 'Tarifa', valor: `${tasaAplicada}%` }
-          ];
-        }
+        // Base mínima 0 UVT - aplica desde el primer peso
+        tasaAplicada = 11;
+        retencion = valor * (tasaAplicada / 100);
+        aplicaRetencion = true;
+        detalles = [
+          { label: 'Tipo', valor: 'Comisiones' },
+          { label: 'Base mínima', valor: 'No aplica - retiene desde el primer peso' },
+          { label: 'Tarifa', valor: `${tasaAplicada}%` },
+          { label: 'Nota', valor: 'Aplica tanto para personas naturales como jurídicas' }
+        ];
         break;
 
       case 'rendimientos':
@@ -142,10 +146,54 @@ const CalculadoraRetencionCompleta2026 = () => {
         retencion = valor * (tasaAplicada / 100);
         aplicaRetencion = true;
         detalles = [
-          { label: 'Tipo', valor: 'Rendimientos financieros' },
+          { label: 'Tipo', valor: 'Rendimientos financieros (intereses)' },
+          { label: 'Base mínima', valor: 'No aplica - retiene desde el primer peso' },
           { label: 'Tarifa', valor: `${tasaAplicada}%` },
-          { label: 'Nota', valor: 'Intereses, CDTs, bonos, etc.' }
+          { label: 'Aplica a', valor: 'Intereses, CDTs, bonos, etc.' }
         ];
+        break;
+
+      case 'transporte':
+        baseMinima = 2 * UVT_2026; // 2 UVT para transporte de carga
+        if (valor >= baseMinima) {
+          tasaAplicada = 1; // Transporte de carga nacional
+          retencion = valor * (tasaAplicada / 100);
+          aplicaRetencion = true;
+          detalles = [
+            { label: 'Tipo', valor: 'Transporte nacional de carga' },
+            { label: 'Base mínima', valor: `${baseMinima.toLocaleString('es-CO', { style: 'currency', currency: 'COP' })} (2 UVT)` },
+            { label: 'Tarifa', valor: `${tasaAplicada}%` },
+            { label: 'Nota', valor: 'Para transporte de pasajeros: 10 UVT y 3.5%' }
+          ];
+        }
+        break;
+
+      case 'hoteles':
+        baseMinima = 2 * UVT_2026; // 2 UVT
+        if (valor >= baseMinima) {
+          tasaAplicada = 3.5;
+          retencion = valor * (tasaAplicada / 100);
+          aplicaRetencion = true;
+          detalles = [
+            { label: 'Tipo', valor: 'Servicios de hoteles y restaurantes' },
+            { label: 'Base mínima', valor: `${baseMinima.toLocaleString('es-CO', { style: 'currency', currency: 'COP' })} (2 UVT)` },
+            { label: 'Tarifa', valor: `${tasaAplicada}%` }
+          ];
+        }
+        break;
+
+      case 'construccion':
+        baseMinima = 10 * UVT_2026; // 10 UVT
+        if (valor >= baseMinima) {
+          tasaAplicada = 2;
+          retencion = valor * (tasaAplicada / 100);
+          aplicaRetencion = true;
+          detalles = [
+            { label: 'Tipo', valor: 'Contratos de construcción y urbanización' },
+            { label: 'Base mínima', valor: `${baseMinima.toLocaleString('es-CO', { style: 'currency', currency: 'COP' })} (10 UVT)` },
+            { label: 'Tarifa', valor: `${tasaAplicada}%` }
+          ];
+        }
         break;
     }
 
@@ -343,7 +391,7 @@ const CalculadoraRetencionCompleta2026 = () => {
                     <Icon icon="mdi:folder-multiple" className="text-purple-600" width="24" />
                     <div className="text-left">
                       <p className="text-xs text-gray-600 font-medium">Tipos disponibles</p>
-                      <p className="text-lg font-bold text-purple-600">8</p>
+                      <p className="text-lg font-bold text-purple-600">11</p>
                     </div>
                   </div>
                 </div>
@@ -509,7 +557,7 @@ const CalculadoraRetencionCompleta2026 = () => {
             )}
 
             {/* Toggle declarante para tipos que lo requieren */}
-            {['honorarios', 'servicios'].includes(tipoSeleccionado) && (
+            {['honorarios', 'servicios', 'compras'].includes(tipoSeleccionado) && (
               <div className="mb-6 p-5 bg-gradient-to-br from-yellow-50 to-orange-50 rounded-xl border-2 border-yellow-200">
                 <label className="flex items-center gap-3 cursor-pointer group">
                   <div className="relative">
@@ -527,10 +575,9 @@ const CalculadoraRetencionCompleta2026 = () => {
                       Soy declarante de renta
                     </span>
                     <span className="text-sm text-gray-600">
-                      {esDeclarante 
-                        ? `Tarifa aplicable: ${tipoSeleccionado === 'honorarios' ? '10%' : '4%'}` 
-                        : `Tarifa aplicable: ${tipoSeleccionado === 'honorarios' ? '11%' : '6%'}`
-                      }
+                      {tipoSeleccionado === 'honorarios' && (esDeclarante ? 'Tarifa: 10%' : 'Tarifa: 11%')}
+                      {tipoSeleccionado === 'servicios' && (esDeclarante ? 'Tarifa: 4%' : 'Tarifa: 6%')}
+                      {tipoSeleccionado === 'compras' && (esDeclarante ? 'Tarifa: 2.5%' : 'Tarifa: 3.5%')}
                     </span>
                   </div>
                 </label>
