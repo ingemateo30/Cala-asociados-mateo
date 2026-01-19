@@ -3,13 +3,18 @@ export const paths = {
         root: '/',
     },
     navbar: {
-      inicio: '/',
+     inicio: '/',
       nosotros: `/nosotros`,
       servicios: '/servicios',
-      'calculadora nómina': '/calculadora-nomina',
+      calculadoras: {
+        label: 'Calculadoras',
+        submenu: [
+          { label: 'Calculadora de Nómina', path: '/calculadora-nomina' },
+          { label: 'Retención en la Fuente', path: '/calculadora-retencion' }
+        ]
+      },
       noticias: '/noticias',
       'nuestros clientes': '/Empresas',
-      //nuestroEquipo: '/nuestroequipo',
       contacto: '/contacto',
     },
   };
