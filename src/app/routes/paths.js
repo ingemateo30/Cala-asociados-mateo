@@ -6,6 +6,7 @@ export const paths = {
       inicio: '/',
       nosotros: `/nosotros`,
       servicios: '/servicios',
+      'calculadora nómina': '/calculadora-nomina',
       noticias: '/noticias',
       'nuestros clientes': '/Empresas',
       //nuestroEquipo: '/nuestroequipo',
