@@ -145,8 +145,8 @@ const CalculadoraNomina = () => {
     const hen = horasExtrasNocturnas * valorHora * 1.75;
     const rn = horasRecargoNocturno * valorHora * 0.35;
     const hdf = horasDominicalesFestivos * valorHora * 1.75;
-    const hedd = horasExtrasDiurnasDominicales * valorHora * 2.0;
-    const hend = horasExtrasNocturnasDominicales * valorHora * 2.5;
+    const hedd = horasExtrasDiurnasDominicales * valorHora * 2.150;
+    const hend = horasExtrasNocturnasDominicales * valorHora * 2.65;
     
     return {
       salarioBase: salarioProporcional,
@@ -582,12 +582,12 @@ const CalculadoraNomina = () => {
                     <div>
                       <label className="block text-sm font-medium text-gray-700 mb-1">HE Diurnas (+25%)</label>
                       <input type="number" min="0" value={horasExtrasDiurnas} onChange={(e) => setHorasExtrasDiurnas(Number(e.target.value))} className="w-full px-3 py-2 border-2 border-gray-300 rounded-lg text-gray-900 font-semibold bg-white" />
-                      <p className="text-xs text-gray-500 mt-0.5">6:00 AM - 10:00 PM</p>
+                      <p className="text-xs text-gray-500 mt-0.5">6:00 AM - 7:00 PM</p>
                     </div>
                     <div>
                       <label className="block text-sm font-medium text-gray-700 mb-1">HE Nocturnas (+75%)</label>
                       <input type="number" min="0" value={horasExtrasNocturnas} onChange={(e) => setHorasExtrasNocturnas(Number(e.target.value))} className="w-full px-3 py-2 border-2 border-gray-300 rounded-lg text-gray-900 font-semibold bg-white" />
-                      <p className="text-xs text-gray-500 mt-0.5">10:00 PM - 6:00 AM</p>
+                      <p className="text-xs text-gray-500 mt-0.5">7:00 PM - 6:00 AM</p>
                     </div>
                     <div>
                       <label className="block text-sm font-medium text-gray-700 mb-1">Recargo Nocturno (+35%)</label>
@@ -599,11 +599,11 @@ const CalculadoraNomina = () => {
                       <input type="number" min="0" value={horasDominicalesFestivos} onChange={(e) => setHorasDominicalesFestivos(Number(e.target.value))} className="w-full px-3 py-2 border-2 border-gray-300 rounded-lg text-gray-900 font-semibold bg-white" />
                     </div>
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-1">HE Diurnas Dom/Fest (+100%)</label>
+                      <label className="block text-sm font-medium text-gray-700 mb-1">HE Diurnas Dom/Fest (+115%)</label>
                       <input type="number" min="0" value={horasExtrasDiurnasDominicales} onChange={(e) => setHorasExtrasDiurnasDominicales(Number(e.target.value))} className="w-full px-3 py-2 border-2 border-gray-300 rounded-lg text-gray-900 font-semibold bg-white" />
                     </div>
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-1">HE Nocturnas Dom/Fest (+150%)</label>
+                      <label className="block text-sm font-medium text-gray-700 mb-1">HE Nocturnas Dom/Fest (+165%)</label>
                       <input type="number" min="0" value={horasExtrasNocturnasDominicales} onChange={(e) => setHorasExtrasNocturnasDominicales(Number(e.target.value))} className="w-full px-3 py-2 border-2 border-gray-300 rounded-lg text-gray-900 font-semibold bg-white" />
                     </div>
                   </div>
